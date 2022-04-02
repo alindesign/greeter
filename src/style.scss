@@ -1,0 +1,165 @@
+@import "../node_modules/normalize.css/normalize.css";
+
+body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#console {
+  box-sizing: border-box;
+  z-index: 2;
+  background-color: rgb(46, 51, 63, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  color: #d8dde8;
+  padding: 24px;
+  width: 100vw;
+  height: 100vh;
+  white-space: pre-wrap;
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 960px) {
+    max-width: 900px;
+    max-height: 580px;
+    border-radius: 14px;
+    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1140px;
+    max-height: 640px;
+  }
+}
+
+#console,
+#console .code {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#console .code.black {
+  color: #3b4151;
+}
+
+#console .code.red {
+  color: #be6069;
+}
+
+#console .code.green {
+  color: #a3bd8b;
+}
+
+#console .code.yellow {
+  color: #ebca8a;
+}
+
+#console .code.blue {
+  color: #81a0c0;
+}
+
+#console .code.magenta {
+  color: #b48dac;
+}
+
+#console .code.cyan {
+  color: #88bfcf;
+}
+
+#console .code.white {
+  color: #e5e8ef;
+}
+
+#console .code.foreground {
+  color: #d8dde8;
+}
+
+.background {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.tac {
+  text-align: center;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.text {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+@for $i from 0 through 10 {
+  $size: $i * 8px;
+
+  .m#{$i} {
+    margin: $size;
+  }
+  .mt#{$i} {
+    margin-top: $size;
+  }
+  .mb#{$i} {
+    margin-bottom: $size;
+  }
+  .ml#{$i},
+  .mx#{$i} {
+    margin-left: $size;
+  }
+  .mr#{$i},
+  .mx#{$i} {
+    margin-right: $size;
+  }
+
+  .p#{$i} {
+    padding: $size;
+  }
+  .pt#{$i} {
+    padding-top: $size;
+  }
+  .pb#{$i} {
+    padding-bottom: $size;
+  }
+  .pl#{$i},
+  .px#{$i} {
+    padding-left: $size;
+  }
+  .pr#{$i},
+  .px#{$i} {
+    padding-right: $size;
+  }
+}
